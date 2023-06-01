@@ -1,6 +1,6 @@
 .header
 {
-	height: 400px;
+	height: 500px;
 	background-image: url(../images/bgheader1.jpg);
 	background-attachment: fixed;
 	background-position: center;
@@ -192,6 +192,6 @@ footer
 {
 	background-color: white;
 
-
+}
 
 
