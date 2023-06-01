@@ -1,0 +1,135 @@
+<section class="p-5">
+  <a id="contact"></a>
+  <div class="result"></div>
+  <div class="container">
+    <div class="row  justify-content-center">
+      <div class="col-md-12 p-5">
+        <p class="text-center">
+          <button type="button" id="toggle" class="btn btn-info"></i> Contactez-nous
+          </button>
+        </p>
+        <form id="myForm" action="" method="POST">
+          <div class="form-group">
+            <label for="nom">Nom</label> :
+            <input type="text" name="nom" id="nom" required class="form-control">
+            <span id="nom"></span>
+          </div>
+          <div class="form-group">
+            <label for="societe">Entreprise</label> :
+            <input type="text" name="societe" id="societe" required class="form-control">
+            <span id="societe"></span>
+          </div>
+          <div class="form-group">
+            <label for="email">Email</label> :
+            <input type="email" name="email" id="email" required placeholder="utilisateur@domaine.fr" class="form-control">
+            <span id="email"></span>
+          </div>
+          <div class="form-group">
+            <label for="tel">Téléphone</label> :
+            <input type="tel" name="tel" id="tel" required  pattern="[0-9]{2}-[0-9]{2}-[0-9]{2}-[0-9]{2}-[0-9]{2}" class="form-control">
+            <span id="tel"></span>
+            <small style="opacity: 0.6;"><i> format : 00-00-00-00-00 </i></small>
+          </div>
+          <div class="form-group">
+            <label for="message">Message</label>
+            <textarea class="form-control" id="message" rows="3" name="message"></textarea>
+            <span id="message"></span>
+          </div>
+          <div class="form-group">
+            <label for="objet">Objet de la demande</label>
+            <select id="objet" name="objet" class="form-control">
+              <option value="site web">Site web</option>
+              <option value="audiovisuel">Audiovisuel</option>
+              <option value="reseauxsociaux">Reseaux sociaux</option>
+              <option value="autre">Autres demande</option>
+            </select>
+          </li>
+          <br>
+        </div>
+        <div class="form-group">
+          <input type="checkbox" name="confirmation" id="confirmation">
+          <label for="confirmation">M'envoyer un email de confirmation</label>
+        </div>
+        <input type="submit" value="Envoyer" class="btn btn-info" >
+        <input type="reset" value="Annuler" class="btn btn-danger" id="ok">
+      </form>
+      <div class="divalert text-center"><span>Nom ou sociéte trop court !!</span></div>
+    </div>
+  </div>
+</div>
+</section>
+<footer>
+  © 2019 BG creaweb 
+</footer>
+<script
+src="https://code.jquery.com/jquery-3.4.1.min.js"
+integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo="
+crossorigin="anonymous"></script>
+<script>
+  window.jQuery || document.write('<script src="../js/jquery-3.4.1.min.js"><\/script>')
+</script>
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+<script type="text/javascript">
+  $(function(){
+   $('.divalert').hide();
+   $('#myForm').hide();
+   $('#toggle').click(function(e) {
+    $('#myForm').slideToggle(1000);
+  });
+
+   $('#myForm').submit(function(e){
+    e.preventDefault();
+    if ($('#nom').val().length < 2 || $('#societe').val().length < 2) {
+      $('.divalert').show();
+      return;
+    }
+    $('.divalert').html('<img class="wait" src="images/loading.gif">').show();
+    $('#myForm').slideToggle(1000);
+    $("#ok").prop('disabled', true);
+
+    $('.input').focus( function(e){
+
+      $('.divalert').hide(1000);
+    });
+    var messageTexte = new Array();
+    messageTexte['succes'] = 'Votre message à été envoyé avec succès !';
+    messageTexte['echec'] = 'Une erreur est survenue lors de l\'envoi de votre message !';
+    $.ajax({
+
+      url: 'traitement.php',
+
+      method: 'POST',
+
+      dataType: 'html',
+
+      data: {
+
+        nom: $('#nom').val(),
+        entreprise: $('#societe').val(),
+        email: $('#email').val(),
+        tel: $('#tel').val(),
+        message: $('#message').val(),
+        objet: $('#objet option:selected').val()
+
+      },
+      error: function() {
+        alert(messageTexte['echec']);
+      },
+
+      complete: function () {
+        $('#ok').prop('disabled', false);
+      },
+
+      success : function(data, textStatus, jqXHR){
+       $('.divalert').hide(1000);
+       alert(messageTexte['succes']);
+
+     },
+
+   })
+
+  })
+
+ });
+</script>

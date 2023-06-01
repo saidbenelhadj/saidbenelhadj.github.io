@@ -1,0 +1,197 @@
+.header
+{
+	height: 400px;
+	background-image: url(../images/bgheader1.jpg);
+	background-attachment: fixed;
+	background-position: center;
+	background-repeat: no-repeat;
+}
+
+body div p
+{
+	color: #757575;
+	font-family: calibri, regular;
+	font-size: 16px;
+}
+
+h2
+{
+	color: #002c9c;
+	font-family: calibri, regular;
+	font-size: 20px;
+}
+
+h3
+{
+	color: #242424;
+	font-size: 18px; 
+}
+
+.hr
+{
+	width: 800px;
+	border-bottom: 1px solid #990202;
+	margin: auto;
+}
+
+.hr1
+{
+	width: 100px;
+	border-bottom: 5px solid #990202;
+	margin: auto;
+}
+
+.quisommesnous 
+{
+	background-color: #0d49a0;
+	color: white;
+}
+
+.quisommesnous p
+{
+	background-color: #0d49a0;
+	color: white;
+	font-size: 18px; 
+}
+
+.quisommesnous h1
+{
+	background-color: #0d49a0;
+	color: white;
+}
+
+.button 
+{
+	background-color: transparent;
+	color: white;
+	border: 2px solid #ffff;
+	padding: 10px;
+	letter-spacing: 1px;
+	font-weight: 700;
+	text-decoration: none;
+}
+
+.button a
+{
+	color: white;
+	text-decoration: none;
+}
+
+.button:hover 
+{
+	background-color: white;
+	color: #0d49a0;
+	border: 2px solid #ffff;
+	padding: 10px;
+	letter-spacing: 1px;
+	font-weight: 700;
+	text-decoration: none;
+}
+
+.button:hover a
+{
+	color: #0d49a0;
+	text-decoration: none;
+}
+
+.button2
+{
+	background-color: transparent;
+	color: #990202;
+	border: 2px solid #990202;
+	padding: 10px;
+	letter-spacing: 1px;
+	font-weight: 700;
+	text-decoration: none;
+}
+
+.button2:hover
+{
+	background-color: #990202;
+	color: white;
+	border: 2px solid #990202;
+	text-decoration: none;
+	padding: 10px;
+	letter-spacing: 1px;
+	font-weight: 700;
+}
+
+.ux
+{
+	background-color: #332e2e;
+	padding-top: 5%;
+	padding-left: 5%;
+	padding-right: 5%;
+
+}
+
+.ux p
+{
+	color: white;
+
+}
+
+.ux h3
+{
+	color: white;
+
+}
+
+.ux1
+{
+	width: 600px;
+	margin: auto;
+	padding-bottom: 3%;
+}
+
+/*nav*/
+.navbar .navbar-nav .nav-item .nav-link
+{
+	color:#990202;
+}
+.navbar .navbar-nav .nav-item .nav-link:hover{
+	color:#332e2e;
+}
+.lien a{
+	color:#990202;
+}
+.lien a:hover{
+	color:#332e2e;
+}
+nav
+{
+	background: white;
+	text-align: center;
+}
+li a
+{
+	text-decoration:none;
+}
+
+/*galerie photo*/
+
+.gallery{
+	width: 24%;
+	border: 1px solid lightgrey;
+	padding: 5px;
+}
+
+/*footer*/
+
+footer
+{
+	text-align: center;
+}
+
+.colorfooter
+{
+	background: linear-gradient(white 50%, #990202 50%);
+	padding: 3%;
+}
+.footwhite
+{
+	background-color: white;
+
+
+
+
