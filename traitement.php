@@ -13,5 +13,5 @@
   $headers .= 'MIME-Version: 1.0' . "\r\n";
   $headers .= 'Content-type: text/plain; charset=utf-8' . "\r\n";
   
-  $reponse = @mail('bg.creaweb@gmail.com',$subject,$message,$headers);
+  $reponse = @mail('bhukcezjhbk@gmail.com',$subject,$message,$headers);
   ?>
